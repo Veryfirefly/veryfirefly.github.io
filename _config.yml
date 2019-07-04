@@ -26,7 +26,7 @@ navigation:
     url: /
   - name: 关于
     url: /about
-  - name: 归档
+  - name: 文章
     url: /archive
   - name: 标签
     url: /tags
@@ -67,7 +67,7 @@ url:
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
-baseurl: /veryfirefly
+baseurl: /
 
 
 #
