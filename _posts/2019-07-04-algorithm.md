@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 算法数据结构中有哪些奇技淫巧？
+title: 算法数据结构中有哪些技巧？
 date: 2019-07-04
-Author: 来自脚本之家
+Author: 转自脚本之家
 categories: 
-tags: [algorithm, data structure]
+tags: [算法, 数据结构]
 comments: true
 ---
 
