@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 工作中的一些问题及解决方法笔记？
+title: 工作中遇到的一些问题及解决方法
 date: 2019-07-06
 Author: 来自veryfirefly
 categories: 
