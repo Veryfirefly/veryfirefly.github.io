@@ -1,4 +1,4 @@
-#
+﻿#
 # 这个文档包含了本博客的设定信息，你可以编辑它来个性化自己的博客，
 #
 
@@ -7,7 +7,7 @@
 # 井号后面的文字是说明文档，不会被程序读取。
 name: veryfirefly
 # 描述/签名
-description: What you want YuXiao
+description: What you want?
 
 #
 # 下面的设定都是可选的
