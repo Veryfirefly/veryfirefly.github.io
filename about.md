@@ -54,7 +54,7 @@ permalink: /about/
 
 # 开源项目和作品
 
-- 在今年3月份加入了Alibaba Open Source，并成为了Apache RocketMQ 和 FastJson的 Committer
+- 在今年3月份加入了Alibaba Open Source，并成为了Apache RocketMQ 和 FastJson的 Contributor
 - 分析阅读Apache Tomcat源码中，了解Tomcat组件、Lifecycle周期、Connector处理，并能从源码中构建Tomcat
 - 分析阅读MyCat-NIO源码中，了解jdbc mysql protocol
 
