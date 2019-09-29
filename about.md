@@ -9,7 +9,7 @@ permalink: /about/
 - 手机：15198294374
 - Email：993610942@qq.com
 - QQ/微信号：993610942
-- website : http://www.likeu.cool/ (备案中) | https://www.xsdq.xyz/
+- website : http://www.likeu.cool/(备案中)、https://www.xsdq.xyz/
 
 ---
 
