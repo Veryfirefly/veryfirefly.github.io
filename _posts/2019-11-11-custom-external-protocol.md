@@ -41,11 +41,11 @@ comments: true
 
 1. `[HKEY_CLASSES_ROOT]` 是应用程序运行时必须的信息，`[HKEY_CLASSES_ROOT\xy]`表示在该注册表目录下生成了一个xy的应用程序运行时必须的信息。`@=`为该应用程序默认名称，用来显示程序名称，不填则为exe名称， `URL Protocol=`为该协议所要调用的程序地址。
 
-2. `[HKEY_CLASS_ROOT\xy\shell]`在xy\下生成shell目录。
+2. `[HKEY_CLASSES_ROOT\xy\shell]`在xy\下生成shell目录。
 
-3. `[HKEY_CLASS_ROOT\xy\shell\open]`在xy\shell\下生成open目录
+3. `[HKEY_CLASSES_ROOT\xy\shell\open]`在xy\shell\下生成open目录
 
-4. `[HKEY_CLASS_ROOT\xy\shell\open\command]`在xy\shell\open\下生成command目录，`@=`在command目录下新建一个默认值为协议调用程序的实际路径。
+4. `[HKEY_CLASSES_ROOT\xy\shell\open\command]`在xy\shell\open\下生成command目录，`@=`在command目录下新建一个默认值为协议调用程序的实际路径。
 
 ### 自定义协议的坑 ###
 
