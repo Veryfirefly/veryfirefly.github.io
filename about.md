@@ -9,7 +9,7 @@ permalink: /about/
 - 手机：15198294374
 - Email：993610942@qq.com
 - QQ/微信号：993610942
-- website : [http://www.likeu.cool/(备案中)](http://www.likeu.cool/ "http://www.likeu.cool/")、[https://www.xsdq.xyz/](https://www.xsdq.xyz/ "https://www.xsdq.xyz/")
+- website : [http://www.likeu.cool/(备案中)](http://www.likeu.cool/ "http://www.likeu.cool/")、[https://xsdq.xyz/](https://xsdq.xyz/ "https://xsdq.xyz/")
 
 ---
 
@@ -18,9 +18,9 @@ permalink: /about/
  - 肖宇/男/1997 
  - 专科/四川科技职业学院 软件技术 
  - 工作年限：2年
- - 技术博客：https://veryfirefly.github.io
- - Github：https://github.com/veryfirefly
- - Gitee：https://gitee.com/GangHuo_admin
+ - 技术博客：[https://veryfirefly.github.io](https://veryfirefly.github.io "https://veryfirefly.github.io")
+ - Github：[https://github.com/veryfirefly](https://github.com/veryfirefly "https://github.com/veryfirefly")
+ - Gitee：[https://gitee.com/GangHuo_admin](https://gitee.com/GangHuo_admin "https://gitee.com/GangHuo_admin")
  - 期望职位：Java高级程序员，架构师
  - 期望薪资：税前月薪7k~9k，特别喜欢的公司可例外
  - 期望城市：成都
@@ -44,7 +44,7 @@ permalink: /about/
 
 ### h5小游戏项目
 
-1. 我在这个项目中与策划交流，负责编写2.5D的点球大战的小游戏，配合IGXE接入小游戏。在该项目中，我遇到过2d游戏不能模拟球的自由下落的问题。最后我采用Three.js + Cannon.js 库来编写，由Cannon.js来负责实现物理引擎，而使用Three.js则提供Graphics Render，并采用了Tween.js来解决UI动画、及使用Sound.js作为游戏中的音效实现。
+1. 我在这个项目中与策划交流，负责编写2.5D的点球大战的小游戏，配合IGXE接入小游戏。在该项目中，我遇到过2d游戏不能模拟球的自由下落的问题。最后我采用<u>Three.js + Cannon.js</u> 库来编写，由<u>Cannon.js来负责实现物理引擎</u>，而使用<u>Three.js则提供Graphics Render</u>，并采用了<u>Tween.js来解决UI动画</u>、及使用<u>Sound.js作为游戏中的音效实现</u>。
 
 ### 其他项目
 
