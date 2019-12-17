@@ -9,7 +9,7 @@ permalink: /about/
 - 手机：15198294374
 - Email：993610942@qq.com
 - QQ/微信号：993610942
-- website : http://www.likeu.cool/(备案中)、https://www.xsdq.xyz/
+- website : [http://www.likeu.cool/(备案中)](http://www.likeu.cool/ "http://www.likeu.cool/")、[https://www.xsdq.xyz/](https://www.xsdq.xyz/ "https://www.xsdq.xyz/")
 
 ---
 
@@ -28,79 +28,55 @@ permalink: /about/
 ---
 
 # 工作经历
-（工作经历按逆序排列，最新的在最前边，按公司做一级分组，公司内按二级分组）
 
 ## 成都聚乐科技有限公司 （ 2017年12月 ~ 2019年9月 ）
 
 ### 游戏管理后台项目 
 
-我在这个项目中负责维护并优化原有功能的使用速度，并改善项目结构，根据策划需求调整和快速做出新功能。由于在该项目中，游戏日志全部上报到日志工程中，每日产生数据量高达上百万，做分表处理后，单表数据量上千万，严重影响查询速度，并造成mysql占用cpu资源过高，tomcat会将请求等待或直接丢弃不处理。我采取了优化sql、优化表索引、对某些很耗的查询功能进行请求排队，防止请求次数过高造成宕机的问题、对基础数据在日志上报中就进行一级处理，避免在查询时计算处理数据。成功将多个查询时间需要数分钟的功能优化到10s内。
+1. 我在这个项目中负责维护并优化原有功能的使用速度，并改善项目结构，根据策划需求调整和快速做出新功能。
+2. 由于在该项目中，游戏内的数据日志全部上报到后台所独立出来的日志工程中，每日产生数据量高达上百万，做分表处理后，单表数据量上千万，严重影响查询速度，并造成mysql占用cpu资源过高、tomcat会将请求等待或直接丢弃不处理。我采取了：<u>优化sql、优化表索引、对某些很耗的查询功能进行请求排队，防止请求次数过高造成宕机的问题、对基础数据在日志上报中就进行一级处理，避免在查询时计算处理数据</u>。成功将多个查询时间需要数分钟的功能优化到5s内。
 
-### 游戏充值、登录项目 
+### 游戏内相关项目 
 
-我在这个项目负责与运营渠道对接，获取他们所需要的功能后快速定制api接口，并负责维护该工程。
+1. 我在这个项目负责与运营渠道对接，获取他们所需要的功能后快速定制api接口，并负责维护该工程。
+2. 解决了游戏内部系统在浏览器中无法正常拉起客户端的问题(外部应用调用)，以及自定义协议在https下出现的不安全问题。
 
 
 ### h5小游戏项目
 
-我在这个项目中与策划交流，负责编写2.5D的点球大战的小游戏，并与IGXE(与stream合作)接入小游戏。在该项目中，我遇到过2d游戏不能模拟球的自由下落的问题。最后我采用Three.js + Cannon.js 库来编写，由Cannon.js来负责实现物理引擎，而Three.js则提供Graphics Render，能很好的解决自由落体的问题，采用了Tween.js解决UI动画，Sound.js播放音频。
+1. 我在这个项目中与策划交流，负责编写2.5D的点球大战的小游戏，配合IGXE接入小游戏。在该项目中，我遇到过2d游戏不能模拟球的自由下落的问题。最后我采用Three.js + Cannon.js 库来编写，由Cannon.js来负责实现物理引擎，而使用Three.js则提供Graphics Render，并采用了Tween.js来解决UI动画、及使用Sound.js作为游戏中的音效实现。
 
 ### 其他项目
 
 
-公司官网项目，我采用了springboot + mybatis + dubbo做分布式系统。
+1. 公司官网项目，我们采用了自研架构来解决分布式问题，使用JRaft来做一致性协调工作。
 
 ---
 
 # 开源项目和作品
 
-- 在今年3月份加入了Alibaba Open Source，并成为了Apache RocketMQ 和 FastJson的 Contributor
-- 分析阅读Apache Tomcat源码中，了解Tomcat组件、Lifecycle周期、Connector处理，并能从源码中构建Tomcat
-- 分析阅读MyCat-NIO源码中，了解jdbc mysql protocol
+- 在今年3月份加入了Alibaba Open Source，并成为了<u>Apache RocketMQ</u>、<u>FastJson</u>、<u>Nacos</u> 的 <u>Contributor</u>
+- 分析阅读Apache Tomcat源码中，了解Tomcat的<u>容器组件</u>、<u>生命周期</u>、<u>以及Connector对请求的处理</u>，尝试并<u>成功从源码中构建Tomcat</u>
+- 分析阅读MyCat-NIO源码中，了解并学习<u>mysql 客户端和服务端之间的通信协议</u>
 
 # 技能清单
 
 以下均为我熟练使用的技能
 
 - Web开发：Java/Servlet
-- Web框架：SpringBoot/Spring-Framework/Mybatis/Dubbo
-- 前端框架：Bootstrap/HTML5/ECMAScript5
+- Web框架：SpringBoot/Spring-Framework/Mybatis
+- 分布式框架：Dubbo/SpringCloud
+- 前端框架：Bootstrap/HTML5/ECMAScript5/TypeScript
 - 数据库相关：MySQL/Redis/InfluxDB
-- 版本管理、文档和自动化部署工具：Svn/Git
+- 版本管理工具：Svn/Git
 - 单元测试：Junit
 - 云和开放平台：QQ开放平台/微博开放平台
 - linux：centos
 
 # 自我评价
 
-喜欢学习，勇于挑战自己的极限，喜欢钻研探索当下流行的中间件。对工作充满热情，踏实有耐心。
-
-## 参考技能关键字
-
-- java
-- spring
-- web
-- mysql
-- linux
-- j2ee
-- javascript
-- sql
-- html
-- tomcat
-- jquery
-- jsp
-- ajax
-- css
-- mvc
-- servlet
-- xml
-- eclipse
-- mybatis
-- redis
-- http
-- shell
-
----
+热爱钻研新兴架构和技术，并热爱混迹开源社区从中尝试提升自己，喜欢学习。对工作充满热情，踏实有耐心。
 
 # 致谢
+
 感谢您花时间阅读我的简历，期待能有机会和您共事。
