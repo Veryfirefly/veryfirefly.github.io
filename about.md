@@ -6,7 +6,6 @@ permalink: /about/
 
 # 联系方式
 
-- 手机：15198294374
 - Email：<a href="mailto:993610942@qq.com">993610942@qq.com</a>
 - QQ/微信号：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=993610942&site=qq&menu=yes">993610942</a>
 - website : [http://www.likeu.cool/(备案中)](http://www.likeu.cool/ "http://www.likeu.cool/")、[https://xsdq.xyz/](https://xsdq.xyz/ "https://xsdq.xyz/")
@@ -15,14 +14,13 @@ permalink: /about/
 
 # 个人信息
 
- - 肖宇/男/1997 
- - 专科/四川科技职业学院 软件技术 
- - 工作年限：2年
+ - 最红/男/1997 
+ - 工作年限：2.5年
  - 技术博客：[https://veryfirefly.github.io](https://veryfirefly.github.io "https://veryfirefly.github.io")
  - Github：[https://github.com/veryfirefly](https://github.com/veryfirefly "https://github.com/veryfirefly")
  - Gitee：[https://gitee.com/GangHuo_admin](https://gitee.com/GangHuo_admin "https://gitee.com/GangHuo_admin")
  - 期望职位：Java高级程序员，架构师
- - 期望薪资：税前月薪7k~9k，特别喜欢的公司可例外
+ - 期望薪资：税前月薪7k~9k
  - 期望城市：成都
 
 ---
