@@ -98,7 +98,7 @@ static {
             }
         }
 
-		// 第一次失败 先检查当前目录是否是在bin目录下
+        // 第一次失败 先检查当前目录是否是在bin目录下
         if (homeFile == null) {
             // First fall-back. See if current directory is a bin directory
             // in a normal Tomcat install
@@ -115,7 +115,7 @@ static {
             }
         }
 
-		// 第二次失败 直接使用当前路径
+        // 第二次失败 直接使用当前路径
         if (homeFile == null) {
             // Second fall-back. Use current directory
             File f = new File(userDir);
@@ -126,7 +126,7 @@ static {
             }
         }
 
-		// 将tomcat路径赋值到System中，供其他类调用
+        // 将tomcat路径赋值到System中，供其他类调用
         catalinaHomeFile = homeFile;
         System.setProperty(
                 Globals.CATALINA_HOME_PROP, catalinaHomeFile.getPath());
