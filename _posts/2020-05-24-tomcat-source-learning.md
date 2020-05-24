@@ -71,3 +71,83 @@ tomcat是做java web开发的开发者经常所使用的支持并运行servlet�
 - Valve 阀
 
 tomcat的组件其实不止这些，但这些是经常用的，在后续学习进度中再继续记录其他容器吧，目前提到的这些是要涉及到启动流程时使用的
+
+一般外置tomcat启动是执行bin目录下的startup.sh|bat脚本(windows安装包安装的除外)，startup脚本会先进行操作系统的判断，用于解析不同平台下的soft-link的问题，解析完soft-link后，再判断catalina.sh是否是存在的，如果存在则执行`catalina.sh start`的操作并将所有参数传给catalina.sh
+
+执行catalina脚本会先判断操作系统平台，并tomcat目录路径赋值到`CATALINA_HOME`，在启动的时候会将该值注入到tomcat中。并判断catalina.out文件是否存在，如果不存在则创建。
+
+将log配置文件路径、JAVA_OPTS(java的配置项)、CATALINA_OPTS(catalina的配置项)、以及java.io.tempdir路径和刚刚从startup.sh脚本中传过来的所有参数带入到`org.apache.catalina.startup.Bootstrap`中，并传入一个start的字符串参数，这个会在main方法中用到，并以后台的方式启动，这个时候tomcat进入启动状态中了
+
+```java
+static {
+        // Will always be non-null
+        // 获取tomcat路径
+        String userDir = System.getProperty("user.dir");
+
+        // Home first
+        // CATALINA_HOME_PROP=catalina.home
+        String home = System.getProperty(Globals.CATALINA_HOME_PROP);
+        File homeFile = null;
+
+        if (home != null) {
+            File f = new File(home);
+            try {
+                homeFile = f.getCanonicalFile();
+            } catch (IOException ioe) {
+                homeFile = f.getAbsoluteFile();
+            }
+        }
+
+		// 第一次失败 先检查当前目录是否是在bin目录下
+        if (homeFile == null) {
+            // First fall-back. See if current directory is a bin directory
+            // in a normal Tomcat install
+            File bootstrapJar = new File(userDir, "bootstrap.jar");
+
+			// 如果是在bin目录下，则去到上一级，并获取他的绝对路径
+            if (bootstrapJar.exists()) {
+                File f = new File(userDir, "..");
+                try {
+                    homeFile = f.getCanonicalFile();
+                } catch (IOException ioe) {
+                    homeFile = f.getAbsoluteFile();
+                }
+            }
+        }
+
+		// 第二次失败 直接使用当前路径
+        if (homeFile == null) {
+            // Second fall-back. Use current directory
+            File f = new File(userDir);
+            try {
+                homeFile = f.getCanonicalFile();
+            } catch (IOException ioe) {
+                homeFile = f.getAbsoluteFile();
+            }
+        }
+
+		// 将tomcat路径赋值到System中，供其他类调用
+        catalinaHomeFile = homeFile;
+        System.setProperty(
+                Globals.CATALINA_HOME_PROP, catalinaHomeFile.getPath());
+
+        // catalina.base路径，如果从脚本中获取为null
+        // 则直接将catalina.home属性赋值给catalina.base
+        String base = System.getProperty(Globals.CATALINA_BASE_PROP);
+        if (base == null) {
+            catalinaBaseFile = catalinaHomeFile;
+        } else {
+            File baseFile = new File(base);
+            try {
+                baseFile = baseFile.getCanonicalFile();
+            } catch (IOException ioe) {
+                baseFile = baseFile.getAbsoluteFile();
+            }
+            catalinaBaseFile = baseFile;
+        }
+        
+        // 并保存到System属性中
+        System.setProperty(
+                Globals.CATALINA_BASE_PROP, catalinaBaseFile.getPath());
+    }
+```
