@@ -12,6 +12,7 @@ comments: true
 tomcat是做java web开发的开发者经常所使用的支持并运行servlet的一个中间件，不管项目是基于spring、springboot或者是纯servlet的，只要用到servlet，多多少少都离不开tomcat。经常使用tomcat而不了解其自身结构，会让开发者在处理tomcat抛出自身异常的时候变得束手无策。我也如此，在18年还在实习的时候，面对catalina.out抛出的众多的`org.apache.catalina.LifecycleException`变得束手无策，明明端口没有占用，为什么tomcat就无法启动呢？明明tomcat已经启动成功了，但为什么就是无法访问，甚至返回http 502呢？抱着好奇的态度，我去github上找到了tomcat的源码，下载并抱着专(gou)心(pi)的态度研究。直到今年疫情隔离的时候，我才有幸看懂tomcat，以此来记录我在tomcat中所获得的学习经验(*拖了整整半年才开始写第一章..*)。
 
 > Github : https://github.com/apache/tomcat
+>
 > tips : master分支是持续进行更新的，也就是develop版本，稳定的版本在分支上有对应的tag。
 
 # 1.Tomcat结构描述
