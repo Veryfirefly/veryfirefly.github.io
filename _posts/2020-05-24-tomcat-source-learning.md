@@ -104,7 +104,7 @@ static {
             // in a normal Tomcat install
             File bootstrapJar = new File(userDir, "bootstrap.jar");
 
-			// 如果是在bin目录下，则去到上一级，并获取他的绝对路径
+            // 如果是在bin目录下，则去到上一级，并获取他的绝对路径
             if (bootstrapJar.exists()) {
                 File f = new File(userDir, "..");
                 try {
