@@ -26,7 +26,7 @@ tomcat是做java web开发的开发者经常所使用的支持并运行servlet�
 ![](../images/tomcat/tomcat-directory.png)
 
 - ***bin***目录存放了可执行脚本及程序入口的jar包
-- ***conf***目录存放了tomcat的配置文件，可以配置tomcat的安全权限策略、catalian的配置熟悉、context的路径、server的端口(最常用的)、web.xml的全局配置等配置项
+- ***conf***目录存放了tomcat的配置文件，可以配置tomcat的安全权限策略、catalian的属性配置、context的路径、server的端口等(最常用的)、web.xml的全局配置等配置项
 - ***lib***目录存放的则是tomcat分模块生成的jar包以及tomcat对其他库的依赖包等
 - ***logs***目录存放的是记录tomcat运行的日志文件
 - ***temp***目录存放的是tomcat的缓存文件，如java.io.tempdir配置路径等
@@ -230,3 +230,4 @@ public static void main(String args[]) {
     }
 ```
 
+篇幅有点长，今天暂时不想写了.... 先mark住，等明天再来分析Server到Wrapper的启动加载
