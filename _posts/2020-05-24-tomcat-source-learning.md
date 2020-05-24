@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Tomcat源码阅读学习》Part-1-启动入口、启动流程及组件的定义
+title: 《Tomcat源码阅读学习 Part-1》启动入口、启动流程及常用组件
 date: 2020-05-24
 Author: 来自veryfirefly
 categories: 
@@ -78,6 +78,8 @@ tomcat的组件其实不止这些，但这些是经常用的，在后续学习�
 
 将log配置文件路径、JAVA_OPTS(java的配置项)、CATALINA_OPTS(catalina的配置项)、以及java.io.tempdir路径和刚刚从startup.sh脚本中传过来的所有参数带入到`org.apache.catalina.startup.Bootstrap`中，并传入一个start的字符串参数，这个会在main方法中用到，并以后台的方式启动，这个时候tomcat进入启动状态中了
 
+Bootstrap在jvm初始化类中就开始执行tomcat上下文路径的配置了
+
 ```java
 static {
         // Will always be non-null
@@ -151,3 +153,80 @@ static {
                 Globals.CATALINA_BASE_PROP, catalinaBaseFile.getPath());
     }
 ```
+
+配置好catalina的路径后，进入到main方法，在catalina脚本中传入的start字符串参数在下面就会被用到
+
+```java
+public static void main(String args[]) {
+        // 锁住当前实例 daemonLock是一个final static的Object对象
+        synchronized (daemonLock) {
+            // 线程安全的Bootstrap所持有的实例
+            if (daemon == null) {
+                // Don't set daemon until init() has completed
+                Bootstrap bootstrap = new Bootstrap();
+                try {
+                    // 初始化ClassLoader
+                    // 使用反射机制调用Catalina类中的setParentClassLoader方法将ClassLoader注入
+                    bootstrap.init();
+                } catch (Throwable t) {
+                    handleThrowable(t);
+                    t.printStackTrace();
+                    return;
+                }
+                daemon = bootstrap;
+            } else {
+                 // 设置Catalina的ClassLoader到当前线程的上线文类加载器中
+                 Thread.currentThread().setContextClassLoader(daemon.catalinaLoader);
+            }
+        }
+
+        try {
+            // 默认command为start，以防止没有传入action的参数
+            String command = "start";
+            if (args.length > 0) {
+                // 从脚本中获取传来的action
+                command = args[args.length - 1];
+            }
+
+            if (command.equals("startd")) {
+                args[args.length - 1] = "start";
+                daemon.load(args);
+                daemon.start();
+            } else if (command.equals("stopd")) {
+                args[args.length - 1] = "stop";
+                daemon.stop();
+            } else if (command.equals("start")) {
+                // 以下的三个方法全是反射调用的catalina
+                // 调用catalina的setAwait方法，用于阻塞Server
+                daemon.setAwait(true);
+                // 使用Digester初始化容器实例，并执行容器的init
+                daemon.load(args);
+                // 启动容器
+                daemon.start();
+                if (null == daemon.getServer()) {
+                    System.exit(1);
+                }
+            } else if (command.equals("stop")) {
+                daemon.stopServer(args);
+            } else if (command.equals("configtest")) {
+                daemon.load(args);
+                if (null == daemon.getServer()) {
+                    System.exit(1);
+                }
+                System.exit(0);
+            } else {
+                log.warn("Bootstrap: command \"" + command + "\" does not exist.");
+            }
+        } catch (Throwable t) {
+            // Unwrap the Exception for clearer error reporting
+            if (t instanceof InvocationTargetException &&
+                    t.getCause() != null) {
+                t = t.getCause();
+            }
+            handleThrowable(t);
+            t.printStackTrace();
+            System.exit(1);
+        }
+    }
+```
+
