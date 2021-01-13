@@ -31,6 +31,9 @@ comments: true
         * [获取该topic中指定partitions的offset摘要](#获取该topic中指定partitions的offset摘要)
         * [★产生消息到topic的指定分区](#产生消息到topic的指定分区)
       * [Consumer](#consumer)
+
+
+
 # 使用kafka将数据写入到clickhouse
 
 kafka engine设计用于一次性数据检索。这意味着一旦从kafka表中查询了数据，就将其视为已从队列中使用。因此，不要直接从kafka引擎表中获取数据，而应使用物化视图。一旦数据在kafka表中可用，就会触发物化视图。它会自动将数据从kafka表移至到MergeTree或Distributed Engine表中。因此，你至少需要三个表：
