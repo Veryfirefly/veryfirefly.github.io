@@ -427,7 +427,7 @@ Content-Type: application/vnd.kafka.v2+json
 **生产**(Produce)对应topic的消息，可以选择为消息指定key或partition。**<u>如果没有提供partition，将根据key的hash值选择一个partition。如果没有提供key，将以循环方式为每条消息选择topic。</u>**如果该topic未创建，则该接口会自动创建topic并将消息存入到topic中。
 
 ```http
-POST /topics/(string:topic_name)
+POST /topics/(string:topic_name) HTTP/1.1
 ```
 参数：
 
@@ -466,7 +466,7 @@ POST /topics/(string:topic_name)
 Request：
 
 ``` http
-Host: kafkaproxy.example.com
+POST /topics/test HTTP/1.1
 Content-Type: application/vnd.kafka.json.v2+json
 Accept: application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json
 
