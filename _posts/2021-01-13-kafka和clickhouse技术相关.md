@@ -7,6 +7,30 @@ categories: [kafka,clickhouse]
 tags: [kafka,clickhouse,知识盘点]
 comments: true
 ---
+
+# 目录
+* [使用kafka将数据写入到clickhouse](#使用kafka将数据写入到clickhouse)
+  * [创建示例表SQL语句](#创建示例表sql语句)
+  * [虚拟列](#虚拟列)
+  * [可调整的配置选项](#可调整的配置选项)
+    * [从KafkaSettings\.h 头文件中已知的kafka可用设置和设置参数类型](#从kafkasettingsh-头文件中已知的kafka可用设置和设置参数类型)
+    * [暂时没捋清](#暂时没捋清)
+* [Confluent Kafka REST Proxy APIs](#confluent-kafka-rest-proxy-apis)
+  * [特征](#特征)
+  * [API 接口参考](#api-接口参考)
+    * [Content Types](#content-types)
+    * [Errors](#errors)
+    * [REST Proxy API v2](#rest-proxy-api-v2)
+      * [Topic](#topic)
+        * [获取topic列表](#获取topic列表)
+        * [获取指定topic的元数据](#获取指定topic的元数据)
+        * [★发送消息到topic](#发送消息到topic)
+      * [Partitions](#partitions)
+        * [获取该topic的partitions](#获取该topic的partitions)
+        * [获取该topic的单个partitions的元数据](#获取该topic的单个partitions的元数据)
+        * [获取该topic中指定partitions的offset摘要](#获取该topic中指定partitions的offset摘要)
+        * [★产生消息到topic的指定分区](#产生消息到topic的指定分区)
+      * [Consumer](#consumer)
 # 使用kafka将数据写入到clickhouse
 
 kafka engine设计用于一次性数据检索。这意味着一旦从kafka表中查询了数据，就将其视为已从队列中使用。因此，不要直接从kafka引擎表中获取数据，而应使用物化视图。一旦数据在kafka表中可用，就会触发物化视图。它会自动将数据从kafka表移至到MergeTree或Distributed Engine表中。因此，你至少需要三个表：
