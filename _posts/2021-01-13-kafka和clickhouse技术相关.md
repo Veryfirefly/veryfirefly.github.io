@@ -7,6 +7,8 @@ categories: [kafka,clickhouse]
 tags: [kafka,clickhouse,知识盘点]
 comments: true
 ---
+# 目录
+[toc]
 
 # 使用kafka将数据写入到clickhouse
 
