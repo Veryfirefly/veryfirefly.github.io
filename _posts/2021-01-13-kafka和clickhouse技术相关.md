@@ -29,7 +29,7 @@ kafka engine设计用于一次性数据检索。这意味着一旦从kafka表中
 CREATE TABLE kafka_queue
 (
 	Timestamp	UInt64	Comment '时间戳',
-    Name		String	Comment	'用户名',
+	Name		String	Comment	'用户名',
 	Level		UInt16	Comment '等级',
 	Message		String	Comment '消息'
 ) ENGINE = Kafka
@@ -42,10 +42,10 @@ CREATE TABLE kafka_queue
 -- 2.创建目标表
 CREATE TABLE merge_tree_queue
 (
-    Timestamp	UInt64		Comment '时间戳',
-    CreateTime	DateTime	Comment	'创建时间',
+	Timestamp	UInt64		Comment '时间戳',
+	CreateTime	DateTime	Comment	'创建时间',
 	CreateDate	Date		Comment	'创建日期',
-    Name		String		Comment	'用户名',
+	Name		String		Comment	'用户名',
 	Level		UInt16		Comment	'等级',
 	Message		String		Comment	'消息'
 ) ENGINE = MergeTree()
@@ -94,7 +94,7 @@ FROM
 		<td>_timestamp</td>
 		<td>Nullable(DateTime)</td>
 	</tr>
-</table
+</table>
 ## 手动启停kafka-table-consumer
 
 要停止接收topic的数据或更改转换逻辑，请停止kafka表以分离materialized view：
@@ -118,7 +118,6 @@ ATTACH TABLE kafka_table; -- 启动kafka table consumer
 - kafka_thread_per_consumer (默认值为0)  -  为每个consumer提供独立的线程。启用后，每个consumer将并行的刷新数据（否则来自多个consumer的行将被压缩成一个块）。
 - kafka_row_delimiter  -  分隔符，结束消息。
 - kafka_format  -  消息格式。使用与SQL Format函数。[格式](https://clickhouse.tech/docs/en/interfaces/formats/)
-
 
 
 ### 从KafkaSettings.h 头文件中已知的kafka可用设置和设置参数类型
