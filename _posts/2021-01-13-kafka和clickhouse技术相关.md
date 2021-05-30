@@ -12,11 +12,6 @@ comments: true
 * [使用kafka将数据写入到clickhouse](#使用kafka将数据写入到clickhouse)
   * [创建示例表SQL语句](#创建示例表sql语句)
   * [虚拟列](#虚拟列)
-  * [手动启停kafka\-table\-consumer](#手动启停kafka-table-consumer)
-  * [Kafka存入ClickHouse的流程图](#kafka存入clickhouse的流程图)
-    * [Kafka与ClickHouse的关系图](#kafka与clickhouse的关系图)
-    * [Kafka写入ClickHouse的流程图](#kafka写入clickhouse的流程图)
-    * [ClickHouse将数据回写到Kafka中](#clickhouse将数据回写到kafka中)
   * [可调整的配置选项](#可调整的配置选项)
     * [从KafkaSettings\.h 头文件中已知的kafka可用设置和设置参数类型](#从kafkasettingsh-头文件中已知的kafka可用设置和设置参数类型)
     * [暂时没捋清](#暂时没捋清)
@@ -126,29 +121,6 @@ FROM
 		<td>Nullable(DateTime)</td>
 	</tr>
 </table>
-虚拟列不应在kafka表中创建，因为它们可以自动使用。虚拟列对应的是kafka的metadata信息。可做如下使用：
-
-``` sql
--- 修改步骤3，创建物化视图加入虚拟列
-CREATE MATERIALIZED VIEW kafka_to_merge_tree_queue_mv TO merge_tree_queue
-AS
--- 定义好的触发规则
-SELECT
-	Timestamp,
-	toDateTime(Timestamp) AS CreateTime,
-	toDate(Timestamp) AS CreateDate,
-	Name,
-	Level,
-	Message,
-	_topic AS Topic,
-	_key AS Key,
-	_offset AS Offset,
-	_partition AS Partition,
-	_timestamp AS KafkaTimestamp
-FROM
-	kafka_queue
-```
-
 ## 手动启停kafka-table-consumer
 
 要停止接收topic的数据或更改转换逻辑，请停止kafka表以分离materialized view：
@@ -157,32 +129,6 @@ FROM
 DETACH TABLE kafka_table; -- 停止kafka table consumer
 ATTACH TABLE kafka_table; -- 启动kafka table consumer
 ```
-
-## Kafka存入ClickHouse的流程图
-
-- kafka table  -  librdkafka中的consumer，该表没有物理存储
-  - kafka_format  -  定义以何种形式去解析kafka topic中的数据
-- source table  -  存在在磁盘上的真实的物理存储
-- materialized view  -  触发从consumer中获取数据并写入到磁盘上的逻辑，该视图没有物理存储，类似于一个<u>**函数**</u>。
-  - `CREATE MATERIALIZED VIEW name`为定义的函数名称
-  - `TO`为具体写入哪张表
-  - `AS SELECT...`为物化视图具体的处理逻辑
-
-### Kafka与ClickHouse的关系图
-
-![Kafka和ClickHouse的关系图](../images/clickhouse/producers_and_consumers.png)
-
-右图的Consumer Group为ClickHouse中的consumer，<u>一个kafka table可以有多个consumer</u>
-
-### Kafka写入ClickHouse的流程图
-
-![Kafka写入ClickHouse的流程图](../images/clickhouse/kafka_to_clickhouse.png)
-
-consumer轮询topic，一旦subscribe的topic中有数据，按照创建表的settings中的block size获取数据，`KafkaBlockInputStream`使用`InputFormat`也就是配置中设置的`kafka_format`将从kafka中获取的数据解析成`Block`，之后由`StorageKafka`将数据通过Materialized View中抓取数据再写入到对应的表中。
-
-### ClickHouse将数据回写到Kafka中
-
-![ClickHouse写入Kafka的流程图](../images/clickhouse/write_back_to_topic.png)
 
 ## 可调整的配置选项
 
