@@ -1,0 +1,315 @@
+2021.06.18 17:16:56.161128 [ 2895 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns in part 202105_727724_731215_683, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597691 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:16:56.161679 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 is broken. Looking for parts to replace it.
+2021.06.18 17:16:56.161693 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682
+2021.06.18 17:16:56.161699 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0
+2021.06.18 17:16:56.161705 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731212_731212_0
+2021.06.18 17:16:56.161712 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731215_731215_0
+2021.06.18 17:16:56.161718 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731214_731214_0
+2021.06.18 17:16:56.161725 [ 2895 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 because it covers at least 2 other parts
+2021.06.18 17:16:56.162454 [ 2894 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns.txt in part 202105_731220_731220_0, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597628 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:16:56.162470 [ 2894 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731220_731220_0 because it's impossible to repair.
+2021.06.18 17:16:56.204175 [ 2897 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 27, e.displayText() = DB::ParsingException: Cannot parse input: expected 'columns format version: 1\n' at end of stream., Stack trace (when copying this message, always include the lines below):
+
+0. DB::throwAtAssertionFailed(char const*, DB::ReadBuffer&) @ 0x86653e5 in /usr/bin/clickhouse
+1. DB::NamesAndTypesList::readText(DB::ReadBuffer&) @ 0xe723208 in /usr/bin/clickhouse
+2. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf596e50 in /usr/bin/clickhouse
+3. ? @ 0xf60bb09 in /usr/bin/clickhouse
+4. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+5. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+6. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+7. ? @ 0x86527b3 in /usr/bin/clickhouse
+8. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+9. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:16:56.204202 [ 2897 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 is broken. Looking for parts to replace it.
+2021.06.18 17:16:56.204216 [ 2897 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Detaching broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 because it covers less than 2 parts. You need to resolve this manually
+2021.06.18 17:16:56.247528 [ 2880 ] {} <Error> Application: Caught exception while loading metadata: Poco::Exception. Code: 1000, e.code() = 20, e.displayText() = Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/, Stack trace (when copying this message, always include the lines below):
+
+0. Poco::FileImpl::handleLastErrorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120491e0 in /usr/bin/clickhouse
+1. Poco::DirectoryIteratorImpl::DirectoryIteratorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x12030f77 in /usr/bin/clickhouse
+2. Poco::DirectoryIterator::DirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120311ff in /usr/bin/clickhouse
+3. DB::DiskLocalDirectoryIterator::DiskLocalDirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0448d in /usr/bin/clickhouse
+4. DB::DiskLocal::iterateDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0117e in /usr/bin/clickhouse
+5. DB::MergeTreeIndexGranularityInfo::getMarksExtensionFromFilesystem(std::__1::shared_ptr<DB::IDisk> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xf6a7118 in /usr/bin/clickhouse
+6. DB::MergeTreeData::createPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::MergeTreePartInfo const&, std::__1::shared_ptr<DB::IVolume> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const @ 0xf5dd97b in /usr/bin/clickhouse
+7. ? @ 0xf60a55a in /usr/bin/clickhouse
+8. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+9. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+10. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+11. ? @ 0x86527b3 in /usr/bin/clickhouse
+12. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:16:56.249357 [ 2880 ] {} <Error> Application: Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/
+2021.06.18 17:17:26.721928 [ 2940 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns in part 202105_727724_731215_683, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597691 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:26.721996 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 is broken. Looking for parts to replace it.
+2021.06.18 17:17:26.722008 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682
+2021.06.18 17:17:26.722013 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0
+2021.06.18 17:17:26.722019 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731212_731212_0
+2021.06.18 17:17:26.722026 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731215_731215_0
+2021.06.18 17:17:26.722031 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731214_731214_0
+2021.06.18 17:17:26.722038 [ 2940 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 because it covers at least 2 other parts
+2021.06.18 17:17:26.725483 [ 2939 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns.txt in part 202105_731220_731220_0, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597628 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:26.725535 [ 2939 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731220_731220_0 because it's impossible to repair.
+2021.06.18 17:17:26.745671 [ 2941 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 27, e.displayText() = DB::ParsingException: Cannot parse input: expected 'columns format version: 1\n' at end of stream., Stack trace (when copying this message, always include the lines below):
+
+0. DB::throwAtAssertionFailed(char const*, DB::ReadBuffer&) @ 0x86653e5 in /usr/bin/clickhouse
+1. DB::NamesAndTypesList::readText(DB::ReadBuffer&) @ 0xe723208 in /usr/bin/clickhouse
+2. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf596e50 in /usr/bin/clickhouse
+3. ? @ 0xf60bb09 in /usr/bin/clickhouse
+4. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+5. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+6. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+7. ? @ 0x86527b3 in /usr/bin/clickhouse
+8. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+9. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:26.745695 [ 2941 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 is broken. Looking for parts to replace it.
+2021.06.18 17:17:26.745710 [ 2941 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Detaching broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 because it covers less than 2 parts. You need to resolve this manually
+2021.06.18 17:17:26.753660 [ 2916 ] {} <Error> Application: Caught exception while loading metadata: Poco::Exception. Code: 1000, e.code() = 20, e.displayText() = Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/, Stack trace (when copying this message, always include the lines below):
+
+0. Poco::FileImpl::handleLastErrorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120491e0 in /usr/bin/clickhouse
+1. Poco::DirectoryIteratorImpl::DirectoryIteratorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x12030f77 in /usr/bin/clickhouse
+2. Poco::DirectoryIterator::DirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120311ff in /usr/bin/clickhouse
+3. DB::DiskLocalDirectoryIterator::DiskLocalDirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0448d in /usr/bin/clickhouse
+4. DB::DiskLocal::iterateDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0117e in /usr/bin/clickhouse
+5. DB::MergeTreeIndexGranularityInfo::getMarksExtensionFromFilesystem(std::__1::shared_ptr<DB::IDisk> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xf6a7118 in /usr/bin/clickhouse
+6. DB::MergeTreeData::createPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::MergeTreePartInfo const&, std::__1::shared_ptr<DB::IVolume> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const @ 0xf5dd97b in /usr/bin/clickhouse
+7. ? @ 0xf60a55a in /usr/bin/clickhouse
+8. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+9. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+10. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+11. ? @ 0x86527b3 in /usr/bin/clickhouse
+12. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:26.755864 [ 2916 ] {} <Error> Application: Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/
+2021.06.18 17:17:57.252506 [ 2977 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns in part 202105_727724_731215_683, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597691 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:57.252580 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 is broken. Looking for parts to replace it.
+2021.06.18 17:17:57.252593 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682
+2021.06.18 17:17:57.252604 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0
+2021.06.18 17:17:57.252609 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731212_731212_0
+2021.06.18 17:17:57.252616 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731215_731215_0
+2021.06.18 17:17:57.252621 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731214_731214_0
+2021.06.18 17:17:57.252629 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 because it covers at least 2 other parts
+2021.06.18 17:17:57.252879 [ 2977 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns.txt in part 202105_731220_731220_0, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597628 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:57.252895 [ 2977 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731220_731220_0 because it's impossible to repair.
+2021.06.18 17:17:57.274131 [ 2974 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 27, e.displayText() = DB::ParsingException: Cannot parse input: expected 'columns format version: 1\n' at end of stream., Stack trace (when copying this message, always include the lines below):
+
+0. DB::throwAtAssertionFailed(char const*, DB::ReadBuffer&) @ 0x86653e5 in /usr/bin/clickhouse
+1. DB::NamesAndTypesList::readText(DB::ReadBuffer&) @ 0xe723208 in /usr/bin/clickhouse
+2. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf596e50 in /usr/bin/clickhouse
+3. ? @ 0xf60bb09 in /usr/bin/clickhouse
+4. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+5. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+6. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+7. ? @ 0x86527b3 in /usr/bin/clickhouse
+8. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+9. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:57.274163 [ 2974 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 is broken. Looking for parts to replace it.
+2021.06.18 17:17:57.274178 [ 2974 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Detaching broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 because it covers less than 2 parts. You need to resolve this manually
+2021.06.18 17:17:57.286723 [ 2951 ] {} <Error> Application: Caught exception while loading metadata: Poco::Exception. Code: 1000, e.code() = 20, e.displayText() = Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/, Stack trace (when copying this message, always include the lines below):
+
+0. Poco::FileImpl::handleLastErrorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120491e0 in /usr/bin/clickhouse
+1. Poco::DirectoryIteratorImpl::DirectoryIteratorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x12030f77 in /usr/bin/clickhouse
+2. Poco::DirectoryIterator::DirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120311ff in /usr/bin/clickhouse
+3. DB::DiskLocalDirectoryIterator::DiskLocalDirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0448d in /usr/bin/clickhouse
+4. DB::DiskLocal::iterateDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0117e in /usr/bin/clickhouse
+5. DB::MergeTreeIndexGranularityInfo::getMarksExtensionFromFilesystem(std::__1::shared_ptr<DB::IDisk> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xf6a7118 in /usr/bin/clickhouse
+6. DB::MergeTreeData::createPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::MergeTreePartInfo const&, std::__1::shared_ptr<DB::IVolume> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const @ 0xf5dd97b in /usr/bin/clickhouse
+7. ? @ 0xf60a55a in /usr/bin/clickhouse
+8. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+9. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+10. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+11. ? @ 0x86527b3 in /usr/bin/clickhouse
+12. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:17:57.288880 [ 2951 ] {} <Error> Application: Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/
+2021.06.18 17:18:27.932464 [ 3006 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns.txt in part 202105_731220_731220_0, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597628 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:27.932546 [ 3006 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731220_731220_0 because it's impossible to repair.
+2021.06.18 17:18:27.941644 [ 3002 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns in part 202105_727724_731215_683, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597691 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:27.941669 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 is broken. Looking for parts to replace it.
+2021.06.18 17:18:27.941732 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682
+2021.06.18 17:18:27.941739 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0
+2021.06.18 17:18:27.941748 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731212_731212_0
+2021.06.18 17:18:27.941756 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731215_731215_0
+2021.06.18 17:18:27.941761 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731214_731214_0
+2021.06.18 17:18:27.941768 [ 3002 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 because it covers at least 2 other parts
+2021.06.18 17:18:27.949558 [ 3006 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 27, e.displayText() = DB::ParsingException: Cannot parse input: expected 'columns format version: 1\n' at end of stream., Stack trace (when copying this message, always include the lines below):
+
+0. DB::throwAtAssertionFailed(char const*, DB::ReadBuffer&) @ 0x86653e5 in /usr/bin/clickhouse
+1. DB::NamesAndTypesList::readText(DB::ReadBuffer&) @ 0xe723208 in /usr/bin/clickhouse
+2. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf596e50 in /usr/bin/clickhouse
+3. ? @ 0xf60bb09 in /usr/bin/clickhouse
+4. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+5. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+6. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+7. ? @ 0x86527b3 in /usr/bin/clickhouse
+8. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+9. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:27.949583 [ 3006 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 is broken. Looking for parts to replace it.
+2021.06.18 17:18:27.949597 [ 3006 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Detaching broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 because it covers less than 2 parts. You need to resolve this manually
+2021.06.18 17:18:27.960217 [ 2990 ] {} <Error> Application: Caught exception while loading metadata: Poco::Exception. Code: 1000, e.code() = 20, e.displayText() = Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/, Stack trace (when copying this message, always include the lines below):
+
+0. Poco::FileImpl::handleLastErrorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120491e0 in /usr/bin/clickhouse
+1. Poco::DirectoryIteratorImpl::DirectoryIteratorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x12030f77 in /usr/bin/clickhouse
+2. Poco::DirectoryIterator::DirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120311ff in /usr/bin/clickhouse
+3. DB::DiskLocalDirectoryIterator::DiskLocalDirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0448d in /usr/bin/clickhouse
+4. DB::DiskLocal::iterateDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0117e in /usr/bin/clickhouse
+5. DB::MergeTreeIndexGranularityInfo::getMarksExtensionFromFilesystem(std::__1::shared_ptr<DB::IDisk> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xf6a7118 in /usr/bin/clickhouse
+6. DB::MergeTreeData::createPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::MergeTreePartInfo const&, std::__1::shared_ptr<DB::IVolume> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const @ 0xf5dd97b in /usr/bin/clickhouse
+7. ? @ 0xf60a55a in /usr/bin/clickhouse
+8. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+9. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+10. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+11. ? @ 0x86527b3 in /usr/bin/clickhouse
+12. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:27.962106 [ 2990 ] {} <Error> Application: Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/
+2021.06.18 17:18:58.846607 [ 3034 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns.txt in part 202105_731220_731220_0, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597628 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:58.846693 [ 3034 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731220_731220_0 because it's impossible to repair.
+2021.06.18 17:18:58.846864 [ 3039 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 226, e.displayText() = DB::Exception: No columns in part 202105_727724_731215_683, Stack trace (when copying this message, always include the lines below):
+
+0. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf597691 in /usr/bin/clickhouse
+1. ? @ 0xf60bb09 in /usr/bin/clickhouse
+2. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+3. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+4. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+5. ? @ 0x86527b3 in /usr/bin/clickhouse
+6. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+7. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:58.846881 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 is broken. Looking for parts to replace it.
+2021.06.18 17:18:58.846898 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682
+2021.06.18 17:18:58.846904 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0
+2021.06.18 17:18:58.846914 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731212_731212_0
+2021.06.18 17:18:58.846921 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731215_731215_0
+2021.06.18 17:18:58.846927 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Found part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731214_731214_0
+2021.06.18 17:18:58.846933 [ 3039 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Considering to remove broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731215_683 because it covers at least 2 other parts
+2021.06.18 17:18:58.860087 [ 3034 ] {} <Error> auto DB::MergeTreeData::loadDataParts(bool)::(anonymous class)::operator()() const: Code: 27, e.displayText() = DB::ParsingException: Cannot parse input: expected 'columns format version: 1\n' at end of stream., Stack trace (when copying this message, always include the lines below):
+
+0. DB::throwAtAssertionFailed(char const*, DB::ReadBuffer&) @ 0x86653e5 in /usr/bin/clickhouse
+1. DB::NamesAndTypesList::readText(DB::ReadBuffer&) @ 0xe723208 in /usr/bin/clickhouse
+2. DB::IMergeTreeDataPart::loadColumns(bool) @ 0xf596e50 in /usr/bin/clickhouse
+3. ? @ 0xf60bb09 in /usr/bin/clickhouse
+4. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+5. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+6. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+7. ? @ 0x86527b3 in /usr/bin/clickhouse
+8. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+9. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:58.860163 [ 3034 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 is broken. Looking for parts to replace it.
+2021.06.18 17:18:58.860182 [ 3034 ] {} <Error> system.metric_log (b31b2d8c-47a7-4591-9c4f-08ec06f6d66e): Detaching broken part /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_727724_731210_682 because it covers less than 2 parts. You need to resolve this manually
+2021.06.18 17:18:58.871853 [ 3024 ] {} <Error> Application: Caught exception while loading metadata: Poco::Exception. Code: 1000, e.code() = 20, e.displayText() = Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/, Stack trace (when copying this message, always include the lines below):
+
+0. Poco::FileImpl::handleLastErrorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120491e0 in /usr/bin/clickhouse
+1. Poco::DirectoryIteratorImpl::DirectoryIteratorImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x12030f77 in /usr/bin/clickhouse
+2. Poco::DirectoryIterator::DirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x120311ff in /usr/bin/clickhouse
+3. DB::DiskLocalDirectoryIterator::DiskLocalDirectoryIterator(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0448d in /usr/bin/clickhouse
+4. DB::DiskLocal::iterateDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xea0117e in /usr/bin/clickhouse
+5. DB::MergeTreeIndexGranularityInfo::getMarksExtensionFromFilesystem(std::__1::shared_ptr<DB::IDisk> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0xf6a7118 in /usr/bin/clickhouse
+6. DB::MergeTreeData::createPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::MergeTreePartInfo const&, std::__1::shared_ptr<DB::IVolume> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const @ 0xf5dd97b in /usr/bin/clickhouse
+7. ? @ 0xf60a55a in /usr/bin/clickhouse
+8. ThreadPoolImpl<ThreadFromGlobalPool>::worker(std::__1::__list_iterator<ThreadFromGlobalPool, void*>) @ 0x8651748 in /usr/bin/clickhouse
+9. ThreadFromGlobalPool::ThreadFromGlobalPool<void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()>(void&&, void ThreadPoolImpl<ThreadFromGlobalPool>::scheduleImpl<void>(std::__1::function<void ()>, int, std::__1::optional<unsigned long>)::'lambda1'()&&...)::'lambda'()::operator()() @ 0x86536ff in /usr/bin/clickhouse
+10. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0x864ed1f in /usr/bin/clickhouse
+11. ? @ 0x86527b3 in /usr/bin/clickhouse
+12. start_thread @ 0x7ea5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfe96d in /usr/lib64/libc-2.17.so
+ (version 21.3.3.14 (official build))
+2021.06.18 17:18:58.906866 [ 3024 ] {} <Error> Application: Cannot open file: not a directory: /home/clickhouse/store/b31/b31b2d8c-47a7-4591-9c4f-08ec06f6d66e/202105_731211_731211_0/
