@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux的xfs文件格式的一些格式化坑
+title: Linux-XFS文件系统遇到的问题
 date: 2021-10-09
 Author: 来自veryfirefly
 categories: [linux,xfs,c]
