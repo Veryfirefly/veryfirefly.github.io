@@ -6,7 +6,6 @@ permalink: /about/
 
 # 联系方式
 
-- Phone: 15198294374
 - Email：<a href="mailto:993610942@qq.com">993610942@qq.com</a>
 - QQ/微信号：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=993610942&site=qq&menu=yes">993610942</a>
 - website : [http://www.likeu.cool/](http://www.likeu.cool/ "http://www.likeu.cool/")
